@@ -1,3 +1,4 @@
+# API is Application Programming Interface
 from flask import Flask  #Flask class
 from flask import render_template  #to render all templates
 from flask import jsonify # To convert dictionary text to json
@@ -19,14 +20,15 @@ pekerjaan = [{
   'salary': 'Rp. 15,000,000'
 }]
 
-
+# HTML end point example
 @app.route("/") # don't add any new url
 def hello_world():
   return render_template(
     'home.html', job=pekerjaan, company_name="PAKO"
   )  #jobs is going to make JOBS dictionary can be access in html file -- showing dynamic data
 
-@app.route("/job") # add "/job" url to access dictionary data (json format -- restAPI)
+# Rest API end point example
+@app.route("/api/job") # add "/job" url to access dictionary data (json format -- restAPI)
 def list_jobs():
   return jsonify(pekerjaan)
   
