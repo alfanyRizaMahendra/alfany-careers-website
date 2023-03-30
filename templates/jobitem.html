@@ -1,0 +1,15 @@
+<div class= "border-bottom row" style = "padding-bottom: 8px">
+  <div class = "col-9">
+    <h4 class = "mb-2" style="color : rgb(120,120,120)">{{a['title']}}</h4>
+    {% if 'location' in a %}
+    <div><b>Location : </b>{{a['location']}}</div>
+    {% endif %}
+    
+    {% if 'salary' in a %} <!-- to prevent print salary that doesn't have any value in object -->
+    <div><b>Salary : </b>{{a['salary']}}</div>
+    {% endif %}
+  </div>
+  <div class = "col-3  text-end">
+    <button type="button" class="btn btn-outline-primary">Apply</button>
+  </div>
+</div>
